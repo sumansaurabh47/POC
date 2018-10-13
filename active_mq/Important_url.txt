@@ -1,0 +1,2 @@
+http://activemq.apache.org/destination-features.html
+https://tuhrig.de/queues-vs-topics-vs-virtual-topics-in-activemq/
