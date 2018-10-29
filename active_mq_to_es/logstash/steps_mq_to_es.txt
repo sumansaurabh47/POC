@@ -1,0 +1,22 @@
+Mq to ES
+Step 1 : goto logstash bin folder logstash-6.4.2\bin
+Step 2 : Open command prompt
+Step 3 : install stomp for input  command : logstash-plugin install logstash-input-stomp
+Step 4 : modify lostash.cong
+input { 
+	stomp { 
+		host => "localhost"
+        destination => "out.queue.es"
+    }
+}
+output {
+  elasticsearch { hosts => ["localhost:9200"] }
+}
+Step 5 : Active MQ Configuration for stomp protocol
+ <transportConnectors>
+   <transportConnector name="stomp" uri="stomp://localhost:61613"/>
+</transportConnectors>
+
+
+
+Default Index in ES : http://localhost:9200/logstash-2018.10.29/doc/_search
